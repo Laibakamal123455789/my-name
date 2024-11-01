@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import Header from "@/Component/header/header";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -20,8 +21,19 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        
+        <Header></Header>
+
+        {/* yahan page.js */}
         {children}
+
+        {/* <ToastContainer />
+
+        <Footer></Footer> */}
       </body>
     </html>
   );
